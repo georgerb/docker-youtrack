@@ -4,7 +4,7 @@ MAINTAINER daniel.zwicker@in2experience.com
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN \
     add-apt-repository ppa:openjdk-r/ppa && \
-    apt-get update &&
+    apt-get update && \
     apt-get install openjdk-8-jre && \
     mkdir -p /var/lib/youtrack && \
     groupadd --gid 2000 youtrack && \
