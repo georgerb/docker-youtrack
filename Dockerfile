@@ -14,7 +14,6 @@ COPY entry-point.sh /entry-point.sh
 RUN \
     export YOUTRACK_BUILD=27676 && \
     export YOUTRACK_VERSION=7.0.${YOUTRACK_BUILD} && \
-    mkdir -p /usr/local/youtrack && \
     mkdir -p /var/lib/youtrack && \
     cd /usr/local && \
     curl -L https://download.jetbrains.com/charisma/youtrack-${YOUTRACK_VERSION}.zip > youtrack.zip && \
