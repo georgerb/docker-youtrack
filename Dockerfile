@@ -5,7 +5,7 @@ MAINTAINER daniel.zwicker@in2experience.com
 RUN \
     add-apt-repository ppa:openjdk-r/ppa && \
     apt-get update && \
-    apt-get install openjdk-8-jre && \
+    apt-get install -y openjdk-8-jre && \
     mkdir -p /var/lib/youtrack && \
     groupadd --gid 2000 youtrack && \
     useradd --system -d /var/lib/youtrack --uid 2000 --gid youtrack youtrack && \
