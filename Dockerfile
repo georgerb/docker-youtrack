@@ -19,8 +19,8 @@ RUN \
     curl -L https://download.jetbrains.com/charisma/youtrack-${YOUTRACK_VERSION}.zip > youtrack.zip && \
     unzip youtrack.zip && \
     rm -f youtrack.zip && \
-    mv youtrack-${YOUTRACK_VERSION} youtrack &&
-    cd youtrack &&
+    mv youtrack-${YOUTRACK_VERSION} youtrack && \
+    cd youtrack && \
     echo "$YOUTRACK_VERSION" > version.docker.image && \
     chown -R youtrack:youtrack /usr/local/youtrack
 
