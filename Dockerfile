@@ -12,14 +12,16 @@ RUN \
 COPY entry-point.sh /entry-point.sh
 
 RUN \
-    export YOUTRACK_VERSION=6.5.17057 && \
+    export YOUTRACK_VERSION=7.0.27676 && \
     mkdir -p /usr/local/youtrack && \
     mkdir -p /var/lib/youtrack && \
-    cd /usr/local/youtrack && \
-    echo "$YOUTRACK_VERSION" > version.docker.image && \
+    cd /usr/local && \
     curl -L https://download.jetbrains.com/charisma/youtrack-${YOUTRACK_VERSION}.zip > youtrack.zip && \
     unzip youtrack.zip && \
     rm -f youtrack.zip && \
+    mv youtrack-${YOUTRACK_VERSION} youtrack &&
+    cd youtrack &&
+    echo "$YOUTRACK_VERSION" > version.docker.image && \
     chown -R youtrack:youtrack /usr/local/youtrack
 
 USER youtrack
